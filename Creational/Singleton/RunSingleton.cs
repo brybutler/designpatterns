@@ -1,0 +1,29 @@
+﻿using GangOf4Patterns.Creational;
+
+namespace GangOf4Patterns.Creational
+{
+    public class RunSingleton: ICreational
+    {
+        public void Execute(string title)
+        {
+            Console.Title = title;
+
+            // Ensure class only has one instance.
+
+            var instance1 = Logger.Instance;
+            var instance2 = Logger.Instance;
+
+                if (instance1 == instance2 && instance2 == Logger.Instance)
+            {
+                Console.WriteLine("Instances are the same");
+            }
+
+            instance1.Log($"Message from {nameof(instance1)}");
+            instance2.Log($"Message from {nameof(instance2)}");
+            Logger.Instance.Log($"Message from {nameof(Logger.Instance)}");
+
+            Console.ReadKey();
+        }
+
+    }
+}
