@@ -26,6 +26,7 @@ using GangOf4Patterns.Events.Delegate;
 using GangOf4Patterns.Events.Event;
 using GangOf4Patterns.Structural.Flyweight;
 using GangOf4Patterns.Creational.FactoryMethod_BillingSystem;
+using GangOf4Patterns.Structural.Bridge2;
 
 using var host = Host.CreateDefaultBuilder(args)
     .UseDefaultServiceProvider((context, options) => {
@@ -51,15 +52,16 @@ using var host = Host.CreateDefaultBuilder(args)
     //services.TryAddTransient<ICreational, RunIterator>();
     //services.TryAddTransient<ICreational, RunState>();
     //services.TryAddTransient<ICreational, RunObserver>();
-   //services.TryAddTransient<ICreational, RunMediator>();
-   // services.TryAddTransient<ICreational, RunCommand>();
+    //services.TryAddTransient<ICreational, RunMediator>();
+    // services.TryAddTransient<ICreational, RunCommand>();
     //services.TryAddTransient<ICreational, RunMemento>();
     //services.TryAddTransient<ICreational, RunFluent>();
     //services.TryAddTransient<ICreational, RunTemplate>();
-    services.TryAddTransient<ICreational, RunFactoryMethodBillingService>();
+    //services.TryAddTransient<ICreational, RunFactoryMethodBillingService>();
+    services.TryAddTransient<ICreational, RunMovieLicense>();
     //services.TryAddTransient<ICreational, RunDelegate>();
-   // services.TryAddTransient<ICreational, RunEvent>();
-   // services.TryAddTransient<ICreational, RunFlyweight>();
+    // services.TryAddTransient<ICreational, RunEvent>();
+    // services.TryAddTransient<ICreational, RunFlyweight>();
     services.AddTransient<DIRunner>();
     services.AddOptions<DIOptions>().Configure<IConfiguration>((options, configuration) =>
     {
